@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  # Spring Boot Application
+  crud-school-app:
+    build: .
+    ports:
+      - "7070:7070"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTS=-Xmx512m -Xms256m
+    depends_on:
+      - h2-database
+    networks:
+      - school-network
+    restart: unless-stopped
+
+  # H2 Database (for development/testing)
+  h2-database:
+    image: oscarfonts/h2
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      - H2_OPTIONS=-ifNotExists
+    volumes:
+      - h2-data:/h2-data
+    networks:
+      - school-network
+    restart: unless-stopped
+
+  # Alternative: PostgreSQL Database (for production)
+  # postgres-database:
+  #   image: postgres:15-alpine
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRES_DB=school_db
+  #     - POSTGRES_USER=school_user
+  #     - POSTGRES_PASSWORD=school_password
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   networks:
+  #     - school-network
+  #   restart: unless-stopped
+
+volumes:
+  h2-data:
+  # postgres-data:
+
+networks:
+  school-network:
+    driver: bridge
