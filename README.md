@@ -73,10 +73,10 @@ Class (1) ←→ (N) Student
    ```
 
 4. **Access the application**
-   - Application: http://localhost:8080
-   - H2 Console: http://localhost:8080/h2-console
-   - Swagger UI: http://localhost:8080/swagger-ui.html
-   - API Docs: http://localhost:8080/api-docs
+   - Application: http://localhost:7070
+   - H2 Console: http://localhost:7070/h2-console
+   - Swagger UI: http://localhost:7070/swagger-ui.html
+   - API Docs: http://localhost:7070/api-docs
 
 ### Running with Docker
 
@@ -87,9 +87,9 @@ Class (1) ←→ (N) Student
    ```
 
 2. **Access the application**
-   - Application: http://localhost:8080
+   - Application: http://localhost:7070
    - H2 Console: http://localhost:9092
-   - Swagger UI: http://localhost:8080/swagger-ui.html
+   - Swagger UI: http://localhost:7070/swagger-ui.html
 
 ## API Endpoints
 
@@ -181,7 +181,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 spring.jpa.show-sql=true
 
 # Server Configuration
-server.port=8080
+server.port=7070
 
 # OpenAPI Configuration
 springdoc.swagger-ui.path=/swagger-ui.html
@@ -246,7 +246,7 @@ mvn test jacoco:report
 
 You can test the API using:
 
-- Swagger UI: http://localhost:8080/swagger-ui.html
+- Swagger UI: http://localhost:7070/swagger-ui.html
 - Postman or any REST client
 - curl commands
 
@@ -254,10 +254,10 @@ Example curl commands:
 
 ```bash
 # Get all schools
-curl -X GET http://localhost:8080/api/schools
+curl -X GET http://localhost:7070/api/schools
 
 # Create a new school
-curl -X POST http://localhost:8080/api/schools \
+curl -X POST http://localhost:7070/api/schools \
   -H "Content-Type: application/json" \
   -d '{
     "name": "New School",
