@@ -25,6 +25,7 @@ public class SchoolService {
     private final SubjectRepository subjectRepository;
     private final ClassRepository classRepository;
     
+    
     @Autowired
     public SchoolService(SchoolRepository schoolRepository, 
                         StudentRepository studentRepository,

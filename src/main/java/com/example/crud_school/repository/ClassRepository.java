@@ -12,6 +12,7 @@ import java.util.Optional;
 @Repository
 public interface ClassRepository extends JpaRepository<Class, Long> {
     
+    // Basic queries
     List<Class> findBySchoolId(Long schoolId);
     
     List<Class> findByTeacherId(Long teacherId);
@@ -24,6 +25,7 @@ public interface ClassRepository extends JpaRepository<Class, Long> {
     
     List<Class> findByAcademicYear(Integer academicYear);
     
+    // Custom queries
     @Query("SELECT c FROM Class c WHERE c.school.id = :schoolId AND c.gradeLevel = :gradeLevel")
     List<Class> findBySchoolIdAndGradeLevel(@Param("schoolId") Long schoolId, @Param("gradeLevel") Integer gradeLevel);
     

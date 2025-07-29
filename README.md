@@ -219,14 +219,6 @@ src/
         └── com/example/crud_school/
 ```
 
-### Adding New Features
-
-1. **Create Entity**: Add JPA entity in `entity/` package
-2. **Create Repository**: Add repository interface in `repository/` package
-3. **Create Service**: Add business logic in `service/` package
-4. **Create Controller**: Add REST endpoints in `controller/` package
-5. **Add DTOs**: Create DTOs for API responses in `dto/` package
-
 ## Testing
 
 ### Running Tests
@@ -240,32 +232,6 @@ mvn test -Dtest=SchoolControllerTest
 
 # Run tests with coverage
 mvn test jacoco:report
-```
-
-### API Testing
-
-You can test the API using:
-
-- Swagger UI: http://localhost:7070/swagger-ui.html
-- Postman or any REST client
-- curl commands
-
-Example curl commands:
-
-```bash
-# Get all schools
-curl -X GET http://localhost:7070/api/schools
-
-# Create a new school
-curl -X POST http://localhost:7070/api/schools \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "New School",
-    "description": "A new school",
-    "address": "123 New Street",
-    "phone": "+1-555-000-0000",
-    "email": "info@newschool.edu"
-  }'
 ```
 
 ## Deployment
@@ -289,16 +255,6 @@ curl -X POST http://localhost:7070/api/schools \
    docker-compose down
    ```
 
-### Production Deployment
-
-For production deployment, consider:
-
-- Using PostgreSQL instead of H2
-- Adding security with Spring Security
-- Implementing caching with Redis
-- Adding monitoring with Actuator
-- Using a reverse proxy like Nginx
-
 ## Contributing
 
 1. Fork the repository
@@ -306,11 +262,3 @@ For production deployment, consider:
 3. Make your changes
 4. Add tests for new functionality
 5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
-
-## Support
-
-For support and questions, please open an issue in the repository.
