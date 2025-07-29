@@ -56,8 +56,8 @@ Class (1) ←→ (N) Student
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
-   cd crud-school
+   git clone https://github.com/Cyber-Naimo/school-crud-app
+   cd school-crud-app
    ```
 
 2. **Build the application**
